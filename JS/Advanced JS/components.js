@@ -10,17 +10,16 @@ const restaurantRow = (restaurant)=> {
 const restaurantModal = (restaurant, menu) => {
     const {name, address, postalCode, phone, city, location, company, companyId, _id}= restaurant;
     const {courses} = menu;
-    let menuHTML= "";
-    courses.forEach(course => {
+    const menuHTML= courses.map(course => {
         const { name, diets, price } = course;
 
-        menuHTML += `
+        return `
             <tr>
                 <td>${name}</td>
                 <td>${diets}</td>
                 <td>${price}</td>
             </tr>`;
-    });
+    }).join("");
     const html = `
     <h2>${name}</h2>
     <p>${address}, ${postalCode} ${city}</p>

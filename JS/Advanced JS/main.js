@@ -3,9 +3,14 @@ import { fetchData } from "./utils.js";
 import { baseUrl } from "./variables.js";
 
 const get= async ()=>{
-    const data= await fetchData();
+    try{
+        const data= await fetchData();
 
-    data.forEach(restaurant => { 
+    const sodexo = data.filter(
+        restaurant => restaurant.company === "Sodexo"
+    );
+
+    sodexo.forEach(restaurant => { 
         const row= restaurantRow(restaurant)
         document.querySelector("table").appendChild(row);
 
@@ -13,6 +18,11 @@ const get= async ()=>{
     });
 
     console.log(data);
+    }
+    catch(error){
+        console.error(error);
+        document.querySelector("table").innerHTML="<tr><td>Failed to load restaurants.</td></tr>";
+    }
 }
 const dailymenu= async (restaurant) =>{
     const response= await fetch(baseUrl+`/daily/${restaurant._id}/en`)
