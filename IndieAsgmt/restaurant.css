@@ -111,19 +111,19 @@ section{
   display: flex;
   gap: 1.5rem;
 }
-.btn{
+.btn, .weeklybtn, .dailybtn, .close{
   display: inline-block;
   padding: 1rem 3rem;
   background-color: #ff6f3d;
   box-shadow: 0 0 25px #ff6f3d;
   border-radius: 3rem;
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   color: black;
   border: 2px solid transparent;
   font-weight: 600;
   transition: 0.3s ease-in-out;
 }
-.btn:hover {
+.btn:hover, .dailybtn:hover, .weeklybtn:hover {
   transform: scale(1.05);
   box-shadow: 0 0 25px #ff6f3d,
               0 0 50px #ff6f3d,
@@ -198,4 +198,33 @@ section{
     border-radius: 3rem;
     padding: 1rem;
 
+}
+dialog {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    background-color: #3E503C;
+    color: #f3ecdb;
+
+    border: 2px solid #ff6f3d;
+    border-radius: 2rem;
+
+    padding: 3rem;
+    min-width: 40rem;
+    max-width: 80%;
+    max-height: 80vh;
+
+    box-shadow: 0 0 25px #ff6f3d;
+}
+.courses {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 1.6rem;
+}
+
+.courses td {
+    padding: 1.5rem;
+    border-bottom: 1px solid #ff6f3d;
 }
