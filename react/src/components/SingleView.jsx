@@ -1,4 +1,7 @@
 const SingleView=({item, setSelectedItem})=>{
+    if (!item) {
+    return null;
+    }
     return(
         <>
         <dialog open>
