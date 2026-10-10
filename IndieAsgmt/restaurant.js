@@ -23,6 +23,7 @@ async function get(){
 
     console.log(data);
 }
+
 async function dailymenu(restaurant){
     const response= await fetch(`https://media2.edu.metropolia.fi/restaurant/api/v1/restaurants/daily/${restaurant._id}/en`)
     const data= await response.json();
@@ -66,7 +67,6 @@ async function dailymenu(restaurant){
     dialog.showModal();
     dialog.querySelector(".close").addEventListener("click", () => {dialog.close();});
 }
-
 
 async function weeklyMenu(restaurant){
     const response= await fetch(`https://media2.edu.metropolia.fi/restaurant/api/v1/restaurants/weekly/${restaurant._id}/en`)
@@ -121,4 +121,5 @@ async function weeklyMenu(restaurant){
     dialog.showModal();
     dialog.querySelector(".close").addEventListener("click", () => {dialog.close();});
 }
+
 get();

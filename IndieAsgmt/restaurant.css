@@ -228,3 +228,7 @@ dialog {
     padding: 1.5rem;
     border-bottom: 1px solid #ff6f3d;
 }
+#map {
+    height: 50dvh;
+    width: 80dvw;
+}
